@@ -11,11 +11,15 @@ module.exports = {
     },
 
     module: {
-        rules:[{
-            test:/\.js$/,
+        rules: [
+          {
+            test: /\.(js|jsx)$/,
             exclude: /node_modules/,
-            include: /src/,
-            use: "babel-loader"
-        }]
-    }
+            use: ['babel-loader']
+          }
+        ]
+      },
+      resolve: {
+        extensions: ['*', '.js', '.jsx']
+      },
 }
