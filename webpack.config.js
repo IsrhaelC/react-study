@@ -27,7 +27,7 @@ module.exports = {
           {
             enforce: 'pre',
             test: /\.js$/,
-            loader: 'standard',
+            loader: 'standard-loader',
             exclude: /node_modules/,
             include: /src/
           },
