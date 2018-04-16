@@ -1,10 +1,16 @@
 'use strict'
 
 import React from 'react'
-import Title from './title'
+import LikeButton from './like-button'
+import SearchButton from './search-button'
 
 export default class App extends React.Component {
   render () {
-    return <h1><Title name='Isrhael Christian' /></h1>
+    return (
+      <h1 className='container'>
+        <LikeButton />
+        <SearchButton />
+      </h1>
+    )
   }
 }
