@@ -6,28 +6,29 @@ import Timer from './timer'
 export default class App extends React.Component {
   constructor () {
     super()
-    console.log('constructor')
+    console.log('constructor app')
     this.state = {
-      showTimer: true
+      showTimer: true,
+      time: 0
     }
   }
 
   componentWillMount () {
-    console.log('mount')
+    console.log('componentWillMount app')
   }
 
   componentDidMount () {
-    console.log('didMount')
+    console.log('componentDidMount app')
   }
 
   render () {
-    console.log('render')
+    console.log('render app')
     return (
       <h1>
-        {this.state.showTimer && <Timer />}
+        <Timer time={this.state.time} />
         <button onClick={() => {
-          this.setState({ showTimer: !this.state.showTimer })
-        }}> Show / Hide Timer </button>
+          this.setState({ time: this.state.time + 10 })
+        }}>Change Props</button>
       </h1>
     )
   }
