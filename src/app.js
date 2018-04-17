@@ -6,7 +6,7 @@ export default class App extends React.Component {
   constructor () {
     super()
     this.state = {
-      value: 'valor inicial',
+      value: '2',
       checked: false
     }
   }
@@ -14,28 +14,15 @@ export default class App extends React.Component {
   render () {
     return (
       <div>
-        <form>
-          <input type='text' value={this.state.value} onChange={(e) => {
-            this.setState({
-              value: e.target.value
-            })
-          }} />
-
-          <label>
-            <input type='checkbox' checked={this.state.checked} onChange={(e) => {
-              this.setState({ checked: e.target.checked })
-            }} />
-            Checkbox
-          </label>
-          <label>
-            <input type='radio' name='rd' value='1' />
-            Radio 1
-          </label>
-          <label>
-            <input type='radio' name='rd' value='2' />
-            Radio 2
-          </label>
-        </form>
+        <select value={this.state.value} onChange={(e) => {
+          this.setState({
+            value: e.target.value
+          })
+        }}>
+          <option value='1'>Opção 1</option>
+          <option value='2'>Opção 2</option>
+          <option value='3'>Opção 3</option>
+        </select>
       </div>
     )
   }
